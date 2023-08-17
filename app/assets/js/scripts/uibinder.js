@@ -6,6 +6,7 @@
 const path          = require('path')
 const { Type }      = require('helios-distribution-types')
 
+const AuthManagerOffline = require('./assets/extension/offline/authmanagerOffline.js')
 const AuthManager   = require('./assets/js/authmanager')
 const ConfigManager = require('./assets/js/configmanager')
 const { DistroAPI } = require('./assets/js/distromanager')
@@ -18,6 +19,7 @@ let fatalStartupError = false
 const VIEWS = {
     landing: '#landingContainer',
     loginOptions: '#loginOptionsContainer',
+    loginOffline: '#loginOfflineContainer',
     login: '#loginContainer',
     settings: '#settingsContainer',
     welcome: '#welcomeContainer',

@@ -15,6 +15,7 @@ const { RestResponseStatus } = require('helios-core/common')
 const { MojangRestAPI, mojangErrorDisplayable, MojangErrorCode } = require('helios-core/mojang')
 const { MicrosoftAuth, microsoftErrorDisplayable, MicrosoftErrorCode } = require('helios-core/microsoft')
 const { AZURE_CLIENT_ID }    = require('./ipcconstants')
+const {validateSelectedOfflineAccount} = require('../extension/offline/authmanagerOffline')
 
 const log = LoggerUtil.getLogger('AuthManager')
 
@@ -308,6 +309,8 @@ exports.validateSelected = async function(){
 
     if(current.type === 'microsoft') {
         return await validateSelectedMicrosoftAccount()
+    } else if (current.type === 'offline'){
+        return await validateSelectedOfflineAccount()
     } else {
         return await validateSelectedMojangAccount()
     }

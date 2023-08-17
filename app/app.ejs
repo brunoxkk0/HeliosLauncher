@@ -5,6 +5,7 @@
     <script src="./assets/js/scripts/uicore.js"></script>
     <script src="./assets/js/scripts/uibinder.js"></script>
     <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/offline-mode.css">
     <style>
         body {
             /*background: url('assets/images/backgrounds/<%=bkid%>.jpg') no-repeat center center fixed;*/
@@ -31,6 +32,7 @@
     <div id="main">
         <%- include('welcome') %>
         <%- include('login') %>
+        <%- include('loginOffline') %>
         <%- include('waiting') %>
         <%- include('loginOptions') %>
         <%- include('settings') %>
